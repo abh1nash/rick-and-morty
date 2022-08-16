@@ -26,7 +26,7 @@
           </div>
           <div class="w-full">
             <div class="uppercase text-gray-400 text-xs">Gender</div>
-            <div>Male</div>
+            <div>{{ characterData.gender }}</div>
           </div>
         </div>
       </div>
