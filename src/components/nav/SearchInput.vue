@@ -29,11 +29,11 @@ import IconClear from "../icons/IconClear.vue";
 const emits = defineEmits<{ (e: "update:modelValue", value: string): void }>();
 const props = defineProps<{ modelValue?: string }>();
 
-let timer: number;
+let timer: ReturnType<typeof setTimeout>;
 const debounce = (e: Event) => {
   const target = e.target as HTMLInputElement;
   clearTimeout(timer);
-  timer = setTimeout(() => {
+  timer = window.setTimeout(() => {
     emits("update:modelValue", target.value);
   }, 400);
 };
