@@ -1,0 +1,62 @@
+<template>
+  <svg
+    xmlns="http://www.w3.org/2000/svg"
+    width="192"
+    height="192"
+    fill="#000000"
+    viewBox="0 0 256 256"
+  >
+    <rect width="256" height="256" fill="none"></rect>
+    <circle
+      cx="120"
+      cy="108"
+      r="60"
+      fill="none"
+      stroke="#000000"
+      stroke-linecap="round"
+      stroke-linejoin="round"
+      stroke-width="16"
+    ></circle>
+    <line
+      x1="120"
+      y1="168"
+      x2="120"
+      y2="232"
+      fill="none"
+      stroke="#000000"
+      stroke-linecap="round"
+      stroke-linejoin="round"
+      stroke-width="16"
+    ></line>
+    <line
+      x1="88"
+      y1="204"
+      x2="152"
+      y2="204"
+      fill="none"
+      stroke="#000000"
+      stroke-linecap="round"
+      stroke-linejoin="round"
+      stroke-width="16"
+    ></line>
+    <polyline
+      points="168 24 208 24 208 64"
+      fill="none"
+      stroke="#000000"
+      stroke-linecap="round"
+      stroke-linejoin="round"
+      stroke-width="16"
+    ></polyline>
+    <line
+      x1="164.4"
+      y1="67.6"
+      x2="208"
+      y2="24"
+      fill="none"
+      stroke="#000000"
+      stroke-linecap="round"
+      stroke-linejoin="round"
+      stroke-width="16"
+    ></line>
+  </svg>
+</template>
