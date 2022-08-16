@@ -33,7 +33,7 @@ let timer: ReturnType<typeof setTimeout>;
 const debounce = (e: Event) => {
   const target = e.target as HTMLInputElement;
   clearTimeout(timer);
-  timer = window.setTimeout(() => {
+  timer = setTimeout(() => {
     emits("update:modelValue", target.value);
   }, 400);
 };
