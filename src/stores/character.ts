@@ -23,7 +23,12 @@ export const useCharacterStore = defineStore({
           let episodeDataUrl = "https://rickandmortyapi.com/api/episode/";
           this.characterData.episode.forEach((episode) => {
             let urlSplit = episode.split("/");
-            if (!this.episodesData[urlSplit[urlSplit.length - 1]])
+            if (
+              !this.episodesData[
+                "https://rickandmortyapi.com/api/episode/" +
+                  urlSplit[urlSplit.length - 1]
+              ]
+            )
               episodeDataUrl += urlSplit.pop() + ","; // breaking the URL because the item after last slash is ep. no.
           });
           episodeDataUrl = episodeDataUrl.slice(0, episodeDataUrl.length - 1); // remove the last comma
