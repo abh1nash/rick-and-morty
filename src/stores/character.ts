@@ -47,6 +47,7 @@ export const useCharacterStore = defineStore({
             });
         })
         .catch((err) => {
+          this.isLoading = false;
           throw err;
         });
     },
