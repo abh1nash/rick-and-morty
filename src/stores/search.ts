@@ -5,6 +5,7 @@ export const useSearchStore = defineStore({
   id: "search",
   state() {
     return {
+      isLoading: false,
       query: "",
       results: [] as SearchResultItem[],
       currentPage: 1,
@@ -16,6 +17,7 @@ export const useSearchStore = defineStore({
   },
   actions: {
     async setQuery(query: string) {
+      this.isLoading = true;
       this.query = query;
       this.currentPage = 1;
       await fetch(
@@ -28,12 +30,14 @@ export const useSearchStore = defineStore({
           this.totalPages = result?.info?.pages || 0;
           this.prev = result?.info?.prev || null;
           this.next = result?.info?.next || null;
+          this.isLoading = false;
         })
         .catch((err) => {
           console.log(err);
         });
     },
     async fetchPage(direction: "next" | "prev") {
+      this.isLoading = true;
       if (this[direction] != null) {
         await fetch(this[direction] as string)
           .then((response) => response.json())
@@ -42,6 +46,7 @@ export const useSearchStore = defineStore({
             this.results = result.results;
             this.prev = result?.info?.prev || null;
             this.next = result?.info?.next || null;
+            this.isLoading = false;
           })
           .catch((err) => {
             console.log(err);
