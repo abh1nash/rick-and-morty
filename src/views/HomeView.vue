@@ -26,7 +26,7 @@
 <script setup lang="ts">
 import SideNavigation from "../components/nav/SideNavigation.vue";
 import CharacterDetails from "../components/character/CharacterDetails.vue";
-import { onMounted } from "vue";
+import { onMounted, onUpdated } from "vue";
 import { useCharacterStore } from "@/stores/character";
 import router from "@/router";
 const props = defineProps<{ characterId?: string }>();
@@ -43,6 +43,10 @@ const checkPropAndFetchData = async () => {
 };
 
 onMounted(() => {
+  checkPropAndFetchData();
+});
+
+onUpdated(() => {
   checkPropAndFetchData();
 });
 </script>
